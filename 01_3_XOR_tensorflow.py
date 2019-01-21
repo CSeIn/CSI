@@ -45,7 +45,7 @@ for epoch in range(2000):
         Cost,Weight,Bias= sess.run([cost,w2,b2],feed_dict={x: X, y_target: Y_target})
         print("\nCost: ",Cost,"\nWeight: ",Weight,"\nBias: ",Bias)
 
-#Accuracy computation
+#Accuracy computation (Testing)
 correct_prediction= tf.equal(tf.to_float(tf.greater(y,0.5)),y_target)
 classified= correct_prediction.eval(session=sess,feed_dict={x: X, y_target: Y_target})
 print("\n", classified)
